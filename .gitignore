@@ -42,3 +42,9 @@ coverage/
 
 # Optional: backend only (if server in same repo)
 server/node_modules/
+
+# --- Do not push to public repo (judges / public should not see) ---
+ZKsubmission/
+grant-application-draft.md
+agents/
+docs/reviewer-feedback-synthesis.md

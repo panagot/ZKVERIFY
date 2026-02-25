@@ -33,8 +33,8 @@ Detailed design: [docs/architecture-and-risks.md](docs/architecture-and-risks.md
 ## Install & run
 
 ```bash
-git clone <your-repo-url>
-cd "ZK proof"
+git clone https://github.com/panagot/ZKVERIFY.git
+cd ZKVERIFY
 npm install
 npm run dev
 ```
@@ -101,21 +101,18 @@ A minimal Circom circuit proves knowledge of a secret that hashes to the user's 
 
 - **Run the app (demo):** `npm install` then `npm run dev`. Open http://localhost:5173. Use **Get verified** (code `30322`) then **Prove human** to see the full flow. No backend required; proofs are simulated.
 - **Run with real zkVerify:** See [Live zkVerify mode](#live-zkverify-mode-real-proofs-on-volta) and [docs/tools-and-setup.md](docs/tools-and-setup.md) for env, circuit build, and `npm run server`. Backend must have `ZKVERIFY_VOLTA_SEED` and circuit artifacts in `circuits/out/`.
-- **Key docs:** [docs/architecture-and-risks.md](docs/architecture-and-risks.md) (technical design), [grant-application-draft.md](grant-application-draft.md) (grant narrative), [docs/use-cases-and-roadmap.md](docs/use-cases-and-roadmap.md) (use cases and roadmap), [docs/web2-program-requirements-mapping.md](docs/web2-program-requirements-mapping.md) (Web2 program requirements and signup use case). Scripts and API: [docs/tools-and-setup.md](docs/tools-and-setup.md).
+- **Key docs:** [docs/architecture-and-risks.md](docs/architecture-and-risks.md) (technical design), [docs/use-cases-and-roadmap.md](docs/use-cases-and-roadmap.md) (use cases and roadmap), [docs/web2-program-requirements-mapping.md](docs/web2-program-requirements-mapping.md) (Web2 program requirements and signup use case). Scripts and API: [docs/tools-and-setup.md](docs/tools-and-setup.md).
 
 ---
 
-## Grant materials
+## Documentation
 
-- [grant-application-draft.md](grant-application-draft.md) — Elevator pitch, "Why zkVerify," 25k strategy, token utility, case studies, risks, checklist.
 - [docs/architecture-and-risks.md](docs/architecture-and-risks.md) — Technical architecture, risks & mitigations, commitment/nullifier pattern, circuit design.
 - [docs/use-cases-and-roadmap.md](docs/use-cases-and-roadmap.md) — Use cases beyond SMS (email, World ID, proof-of-knowledge, age gate, voting); Web2 signup (prove age, email, phone without PII).
 - [docs/web2-program-requirements-mapping.md](docs/web2-program-requirements-mapping.md) — Web2 program: requirements mapping, Key Requirements, milestones.
-[docs/sign-up-sign-in-with-zk-proof.md](docs/sign-up-sign-in-with-zk-proof.md) — **Sign up / Sign in with ZK proof:** no email or phone in Site B's DB; only zk_identifier + verified flags; user "is what he is saying."
-- [agents/case-studies-guide.md](agents/case-studies-guide.md) — Case study types, examples, checklist.
-- **agents/01–06** — Grant strategist, Product/UX critic, Technical architect, Code & logic reviewer, zkVerify integration, Grant extract & narrative briefs.
-- **agents/07–09** — Grok, Deep Seek, and ChatGPT feedback agents: enforce narrative, partner pain, centralization roadmap (07); technical validation, audit, volume framing, compliance (08); why on-chain, trust, portability as M1, composability (09).
-- **agents/AGENT-DIRECTIVE.md** — Shared directive for review-ready quality (UI, use cases, tools, docs).
+- [docs/sign-up-sign-in-with-zk-proof.md](docs/sign-up-sign-in-with-zk-proof.md) — **Sign up / Sign in with ZK proof:** no email or phone in Site B's DB; only zk_identifier + verified flags.
+- [docs/zkverify-how-we-integrate.md](docs/zkverify-how-we-integrate.md) — How we integrate with zkVerify (proof generation, zkVerifyJS).
+- [docs/how-we-would-verify-age.md](docs/how-we-would-verify-age.md) — Roadmap: age/eligibility verification without PII.
 
 ---
 

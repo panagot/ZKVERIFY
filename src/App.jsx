@@ -3,15 +3,13 @@ import GetVerified from './GetVerified'
 import ProveHuman from './ProveHuman'
 import UseCases from './UseCases'
 import Workflow from './Workflow'
+import PartnerIntegration from './PartnerIntegration'
 import { isLiveMode } from './api'
 
 function Home() {
   return (
     <>
       <div className="hero container">
-        <div className="hero-tag" role="status" aria-live="polite">
-          {isLiveMode() ? 'Live zkVerify · Volta' : 'Demo · Thrive zkVerify'}
-        </div>
         <h1>Privacy-preserving proof-of-human verification</h1>
         <p className="hero-sub">One credential, one click. Prove you&apos;re a verified human—not who you are. No PII, no SMS vendor, no bot-farm. Every verification is a ZK proof on zkVerify.</p>
         <p className="hero-note">
@@ -92,6 +90,12 @@ function Home() {
           <NavLink to="/use-cases" className="card-cta">View use cases →</NavLink>
         </div>
 
+        <div className="card card-highlight">
+          <h2>For partners (Site B): widget &amp; API example</h2>
+          <p>Reviewers: see how Site B integrates &quot;Sign in with ZK proof&quot;—example widget (HTML/link) and API response shape (zk_identifier, verified_human, no PII).</p>
+          <NavLink to="/for-partners" className="card-cta">Widget &amp; API example →</NavLink>
+        </div>
+
         <section className="home-quick-start" aria-label="Quick start for reviewers">
           <h2 className="flow-sites-title">For reviewers: try the full flow</h2>
           <div className="card card-highlight">
@@ -114,9 +118,10 @@ export default function App() {
     <>
       <a href="#main-content" className="skip-link">Skip to main content</a>
       <header className="site-header">
-        <div className="container header-inner">
+        <div className="header-inner">
           <NavLink to="/" className="logo" aria-label="Proof-of-Human zkVerify — Home">
-            Proof-of-Human<span> · zkVerify</span>
+            <img src="/logo/logo1.png" alt="" className="logo-img" width="36" height="36" />
+            <span className="logo-text">Proof-of-Human<span> · zkVerify</span></span>
             <span className="mode-badge" aria-label={isLiveMode() ? 'Live mode' : 'Demo mode'}>{isLiveMode() ? 'Live' : 'Demo'}</span>
           </NavLink>
           <nav className="nav-links" aria-label="Main navigation">
@@ -125,6 +130,7 @@ export default function App() {
             <NavLink to="/get-verified">Get verified</NavLink>
             <NavLink to="/prove-human">Prove</NavLink>
             <NavLink to="/use-cases">Use cases</NavLink>
+            <NavLink to="/for-partners">For partners</NavLink>
           </nav>
         </div>
       </header>
@@ -136,6 +142,7 @@ export default function App() {
           <Route path="/get-verified" element={<GetVerified />} />
           <Route path="/prove-human" element={<ProveHuman />} />
           <Route path="/use-cases" element={<UseCases />} />
+          <Route path="/for-partners" element={<PartnerIntegration />} />
         </Routes>
       </main>
 
@@ -149,6 +156,7 @@ export default function App() {
                 <NavLink to="/get-verified">Get verified</NavLink>
                 <NavLink to="/prove-human">Prove human</NavLink>
                 <NavLink to="/use-cases">Use cases</NavLink>
+                <NavLink to="/for-partners">For partners</NavLink>
               </nav>
             </div>
             <div className="footer-section">
